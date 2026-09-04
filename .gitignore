@@ -1,0 +1,7 @@
+nisar_data/
+*.h5
+*.tif
+__pycache__/
+.ipynb_checkpoints/
+.netrc
+.env
