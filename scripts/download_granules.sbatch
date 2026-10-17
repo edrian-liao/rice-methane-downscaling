@@ -17,8 +17,8 @@
 
 set -euo pipefail
 
-module load miniforge/24.3.0-0 2>/dev/null || true
-source activate research 2>/dev/null || conda activate research 2>/dev/null || true
+module load miniforge/26.7.2-0
+conda activate $HOME/envs/research    # adjust if you put the env elsewhere
 
 cd "$SLURM_SUBMIT_DIR"
 

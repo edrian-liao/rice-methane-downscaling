@@ -1,0 +1,39 @@
+# Recreate the local `research` environment on MIT ORCD.
+#
+#   module load miniforge/26.7.2-0
+#   mamba env create -f environment.yml -p $HOME/envs/research    # or --prefix on scratch
+#   conda activate $HOME/envs/research
+#
+# Home quotas on HPC are often small and this resolves to several GB -- put the
+# prefix on scratch/project space if $HOME is tight.
+#
+# To ONLY run download_granules.py you need just asf_search + pandas; the rest
+# is for nisar_coverage.py, the map/calendar scripts and the notebooks.
+name: research
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  # --- required by download_granules.py ---
+  - pandas>=2.2
+  - pip
+  - pip:
+      - asf_search>=13.0            # not on conda-forge
+  # --- coverage tables + maps ---
+  - numpy>=1.26,<2
+  - geopandas>=1.0
+  - shapely>=2.1
+  - pyogrio>=0.10
+  - cartopy>=0.24
+  - matplotlib>=3.10
+  # --- NISAR HDF5 + rasters ---
+  - rasterio>=1.4
+  - rioxarray>=0.18
+  - xarray>=2025.4
+  - h5py>=3.13
+  - h5netcdf>=1.8
+  # --- reading the Runkle workbooks ---
+  - openpyxl>=3.1
+  # --- notebooks ---
+  - jupyterlab>=4.5
+  - nbformat>=5.8
