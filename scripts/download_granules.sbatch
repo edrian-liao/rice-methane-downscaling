@@ -37,6 +37,7 @@ python download_granules.py \
     --out-dir ../data/nisar \
     --log logs.txt \
     --progress-every 60 \
-    --reserve-gb 20
+    --reserve-gb 20 \
+    --dry-run true
 
 echo "job $SLURM_JOB_ID finished $(date -Is) rc=$?"
