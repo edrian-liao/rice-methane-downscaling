@@ -1,4 +1,3 @@
-nisar_data/
 *.h5
 *.tif
 __pycache__/

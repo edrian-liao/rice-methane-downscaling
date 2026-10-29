@@ -1,0 +1,21 @@
+job 26207914 on node1609 starting 2026-10-17T16:42:19-04:00
+hstor014:/data1/group/dvaron/002  240T  9.8T  231T   5% /orcd/data/dvaron/002
+2026-10-17 16:42:20 | INFO    | ========================================================================
+2026-10-17 16:42:20 | INFO    | NISAR download starting | host=node1609 | pid=2466753 | out=/orcd/data/dvaron/002/edliao/rice-methane-downscaling/data/nisar
+2026-10-17 16:42:20 | INFO    | slurm job 26207914 on node1609
+2026-10-17 16:42:20 | INFO    | 38 granule(s) selected, 261.0 GB total | free on ../data/nisar: 230.2 TB
+2026-10-17 16:42:20 | INFO    | authenticating via ~/.netrc
+2026-10-17 16:42:20 | INFO    | [ 1/38] START NISAR_L2_PR_GCOV_017_012_D_071_4005_DHDH_A_20260404T010047_20260404T010122_P05023_N_F_J_001  6.94 GB  track 12 frame 71 DESC  acq 2026-04-04
+2026-10-17 16:43:23 | INFO    | [ 1/38] [###############.............]  52.2%  3.4 GB / 6.5 GB  57.5 MB/s  eta 00:54
+2026-10-17 16:44:19 | WARNING | [ 1/38] attempt 1/5 failed (OSError: size mismatch: got 6928990208, expected 6940000000) - retrying in 15s
+2026-10-17 16:44:34 | INFO    | [ 1/38] RESUME from 6.5 GB
+2026-10-17 16:44:34 | WARNING | [ 1/38] attempt 2/5 failed (HTTPError: 416 Client Error: Requested Range Not Satisfiable for url: https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_017_012_D_071_4005_DHDH_A_20260404T010047_20260404T010122_P05023_N_F_J_001/NISAR_L2_PR_GCOV_017_012_D_071_4005_DHDH_A_20260404T010047_20260404T010122_P05023_N_F_J_001.h5) - retrying in 30s
+2026-10-17 16:45:04 | INFO    | [ 1/38] RESUME from 6.5 GB
+2026-10-17 16:45:04 | WARNING | [ 1/38] attempt 3/5 failed (HTTPError: 416 Client Error: Requested Range Not Satisfiable for url: https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_017_012_D_071_4005_DHDH_A_20260404T010047_20260404T010122_P05023_N_F_J_001/NISAR_L2_PR_GCOV_017_012_D_071_4005_DHDH_A_20260404T010047_20260404T010122_P05023_N_F_J_001.h5) - retrying in 60s
+2026-10-17 16:46:04 | INFO    | [ 1/38] RESUME from 6.5 GB
+2026-10-17 16:46:05 | WARNING | [ 1/38] attempt 4/5 failed (HTTPError: 416 Client Error: Requested Range Not Satisfiable for url: https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_017_012_D_071_4005_DHDH_A_20260404T010047_20260404T010122_P05023_N_F_J_001/NISAR_L2_PR_GCOV_017_012_D_071_4005_DHDH_A_20260404T010047_20260404T010122_P05023_N_F_J_001.h5) - retrying in 120s
+2026-10-17 16:48:05 | INFO    | [ 1/38] RESUME from 6.5 GB
+2026-10-17 16:48:06 | ERROR   | [ 1/38] FAILED after 5 attempts: HTTPError: 416 Client Error: Requested Range Not Satisfiable for url: https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_017_012_D_071_4005_DHDH_A_20260404T010047_20260404T010122_P05023_N_F_J_001/NISAR_L2_PR_GCOV_017_012_D_071_4005_DHDH_A_20260404T010047_20260404T010122_P05023_N_F_J_001.h5
+2026-10-17 16:48:06 | INFO    | STATUS  done 0  skipped 0  failed 1  of 38  |  0.0 B this run  |  elapsed 05:45
+2026-10-17 16:48:06 | INFO    | [ 2/38] START NISAR_L2_PR_GCOV_017_084_D_071_4005_DHDH_A_20260409T005228_20260409T005302_P05023_N_F_J_001  6.69 GB  track 84 frame 71 DESC  acq 2026-04-09
+[2026-10-17T16:48:45.425] error: *** JOB 26207914 ON node1609 CANCELLED AT 2026-10-17T16:48:45 DUE to SIGNAL Terminated ***

@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=nisar-dl
-#SBATCH --output=slurm_%j.out
-#SBATCH --error=slurm_%j.out
-#SBATCH --time=24:00:00
+#SBATCH --output=logs/slurm_%j.out
+#SBATCH --error=logs/slurm_%j.out
+#SBATCH --time=4:00:00
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=8G
 #
@@ -35,9 +35,8 @@ python download_granules.py \
     --list granules_to_download.txt \
     --index nisar_granule_index.csv \
     --out-dir ../data/nisar \
-    --log logs.txt \
+    --log logs/logs.txt \
     --progress-every 60 \
-    --reserve-gb 20 \
-    --dry-run true
+    --reserve-gb 20
 
 echo "job $SLURM_JOB_ID finished $(date -Is) rc=$?"

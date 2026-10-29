@@ -1,0 +1,17 @@
+job 26207153 on node3307 starting 2026-10-17T16:26:26-04:00
+hstor014:/data1/group/dvaron/002  240T  9.8T  231T   5% /orcd/data/dvaron/002
+2026-10-17 16:26:26 | INFO    | ========================================================================
+2026-10-17 16:26:26 | INFO    | NISAR download starting | host=node3307 | pid=72787 | out=/orcd/data/dvaron/002/edliao/rice-methane-downscaling/data/nisar
+2026-10-17 16:26:26 | INFO    | slurm job 26207153 on node3307
+2026-10-17 16:26:26 | INFO    | 38 granule(s) selected, 261.0 GB total | free on ../data/nisar: 230.2 TB
+2026-10-17 16:26:27 | INFO    | authenticating with EARTHDATA_TOKEN
+Traceback (most recent call last):
+  File "/orcd/data/dvaron/002/edliao/rice-methane-downscaling/scripts/download_granules.py", line 408, in <module>
+    main()
+  File "/orcd/data/dvaron/002/edliao/rice-methane-downscaling/scripts/download_granules.py", line 352, in main
+    session = make_session()
+  File "/orcd/data/dvaron/002/edliao/rice-methane-downscaling/scripts/download_granules.py", line 113, in make_session
+    return asf.ASFSession().auth_with_token(tok)
+  File "/home/edliao/envs/research/lib/python3.10/site-packages/asf_search/ASFSession.py", line 151, in auth_with_token
+    raise ASFAuthenticationError('Invalid/Expired token passed')
+asf_search.exceptions.ASFAuthenticationError: Invalid/Expired token passed
