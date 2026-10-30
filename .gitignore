@@ -4,6 +4,7 @@ __pycache__/
 .ipynb_checkpoints/
 .netrc
 .env
-final/
+final/*
+!final/Fields_2024 - Sheet1.csv
 outputs/
 data/*
