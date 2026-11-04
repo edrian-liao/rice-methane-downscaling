@@ -1,0 +1,20 @@
+# Minimal environment for download_granules.py and nothing else.
+#
+#   module load miniforge/26.7.2-0
+#   mamba env create -f environment-download.yml -p $HOME/envs/nisar-dl
+#   conda activate $HOME/envs/nisar-dl
+#
+# ~10 packages instead of the ~300 in environment.yml, which also carries
+# jupyterlab, cartopy/matplotlib and the GDAL stack for the analysis scripts.
+# Use that one only if you intend to run nisar_coverage.py or the notebooks
+# on the cluster too.
+name: nisar-dl
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pandas>=2.2
+  - requests>=2.31          # asf_search pulls it anyway; conda build is cleaner
+  - pip
+  - pip:
+      - asf_search>=13.0    # not on conda-forge
