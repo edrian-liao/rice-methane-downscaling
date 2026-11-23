@@ -189,10 +189,13 @@ def select_granules(args):
     if sel.empty:
         raise SystemExit("No granules selected - loosen the filters.")
 
-    # The index caches no URL, so rebuild the standard ASF path from the name.
+    # URL: taken from the index's `url` column when present (update_pipeline.py
+    # check writes it from ASF; newer granules live in other collections, e.g.
+    # NISAR_L2_GCOV_V1). Otherwise rebuild the provisional-collection path.
     base = ("https://nisar.asf.earthdatacloud.nasa.gov/NISAR/"
             "NISAR_L2_GCOV_PROVISIONAL_V1")
-    sel["url"] = sel.granule.map(lambda g: f"{base}/{g}/{g}.h5")
+    guess = sel.granule.map(lambda g: f"{base}/{g}/{g}.h5")
+    sel["url"] = sel["url"].fillna(guess) if "url" in sel.columns else guess
     sel = sel.sort_values("acq_datetime_utc").reset_index(drop=True)
     return sel[["granule", "url", "size_gb", "track", "frame", "direction",
                 "acq_datetime_utc"]]

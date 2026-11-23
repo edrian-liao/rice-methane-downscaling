@@ -137,7 +137,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--granules", default="data/nisar/*.h5", help="glob, relative to repo root")
-    ap.add_argument("--fields-csv", default="final/Fields_2024 - Sheet1.csv")
+    ap.add_argument("--fields-csv", default="data/files_from_krishma/final/Fields_2024 - Sheet1.csv")
     ap.add_argument("--gauges-csv", default="scripts/gauges_2026.csv")
     ap.add_argument("--out", default="data/nisar_field_clips")
     ap.add_argument("--year", type=int, default=2026)
